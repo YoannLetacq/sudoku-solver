@@ -77,12 +77,22 @@ func isValidSubgrids(grid [][]int) (int, int) {
 // validate the argument format
 func IsValid(args []string) bool {
 	fmt.Println(len(args))
+	for _, arg := range args {
+		for _, number := range arg {
+			if number != '.' {
+				if number < '0' || number > '9' {
+					fmt.Println("[ERROR] Invalid number format, didn't found alphanumeric.")
+					return false
+				}
+			}
+		}
+	}
 	// verify the number of row
-	if len(args) > 10 {
+	if len(args) > 9 {
 		fmt.Printf("[ERROR] Too much argument in call\nhave (%d)\nwant (9)", len(args))
 		return false
 	}
-	if len(args) > 10 {
+	if len(args) < 9 {
 		fmt.Printf("[ERROR] Missing argument in call\nhave (%d)\nwant (9)", len(args))
 		return false
 	}
@@ -90,12 +100,12 @@ func IsValid(args []string) bool {
 	// verify the number of element per row
 	lines := args[1:]
 	for _, el := range lines {
-		if len(el) > 10 {
-			fmt.Printf("[ERROR] Too much argument in call\nhave (%d)\nwant (9)", len(lines))
+		if len(el) > 9 {
+			fmt.Printf("[ERROR] Too much number in call\nhave (%d)\nwant (9)", len(el))
 			return false
 		}
-		if len(el) < 10 {
-			fmt.Printf("[ERROR] Missing argument in call\nhave (%d)\nwant (9)", len(lines))
+		if len(el) < 9 {
+			fmt.Printf("[ERROR] Missing number in call\nhave (%d)\nwant (9)", len(el))
 			return false
 		}
 	}
