@@ -81,7 +81,7 @@ func IsValid(args []string) bool {
 		fmt.Printf("[ERROR] Too much argument in call\nhave (%d)\nwant (9)", len(args))
 		return false
 	}
-	if len(args) > 10 {
+	if len(args) < 10 {
 		fmt.Printf("[ERROR] Missing argument in call\nhave (%d)\nwant (9)", len(args))
 		return false
 	}
