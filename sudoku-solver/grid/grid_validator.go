@@ -18,6 +18,7 @@ func IsFormatted(grid [][]int) (bool, int, int) {
 	if row != -1 {
 		return false, row, col
 	}
+
 	return true, -1, -1
 }
 
@@ -81,7 +82,7 @@ func IsValid(args []string) bool {
 		fmt.Printf("[ERROR] Too much argument in call\nhave (%d)\nwant (9)", len(args))
 		return false
 	}
-	if len(args) < 10 {
+	if len(args) > 10 {
 		fmt.Printf("[ERROR] Missing argument in call\nhave (%d)\nwant (9)", len(args))
 		return false
 	}
@@ -89,24 +90,24 @@ func IsValid(args []string) bool {
 	// verify the number of element per row
 	lines := args[1:]
 	for _, el := range lines {
-		if len(el) > 9 {
-			fmt.Printf("[ERROR] Too much argument in call\nhave (%d)\nwant (9)", len(el))
+		if len(el) > 10 {
+			fmt.Printf("[ERROR] Too much argument in call\nhave (%d)\nwant (9)", len(lines))
 			return false
 		}
-		if len(el) < 9 {
-			fmt.Printf("[ERROR] Missing argument in call\nhave (%d)\nwant (9)", len(el))
+		if len(el) < 10 {
+			fmt.Printf("[ERROR] Missing argument in call\nhave (%d)\nwant (9)", len(lines))
 			return false
 		}
 	}
 
 	// define valid grid based on composition
 	grid := New(args)
-	valid, _, _ := IsFormatted(grid)
+	valid, row, col := IsFormatted(grid)
 	if valid {
 		fmt.Println("The Sudoku grid is valid.")
 		return true
 	} else {
-		fmt.Printf("The Sudoku grid is invalid. Duplicate found.\n")
+		fmt.Printf("The Sudoku grid is invalid. Duplicate found at position (%d, %d).\n", row, col)
 		return false
 	}
 }
