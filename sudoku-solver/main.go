@@ -14,10 +14,10 @@ func main() {
 	args := os.Args[1:]
 
 	// create a new grid
-	sudoku := grid.New(args)
 	if !grid.IsValid(args) {
 		return
 	}
+	sudoku := grid.New(args)
 
 	// display the non-solve grid
 	fmt.Println("Your grid is:")

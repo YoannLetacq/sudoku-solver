@@ -76,7 +76,6 @@ func isValidSubgrids(grid [][]int) (int, int) {
 
 // validate the argument format
 func IsValid(args []string) bool {
-	fmt.Println(len(args))
 	for _, arg := range args {
 		for _, number := range arg {
 			if number != '.' {
@@ -100,7 +99,7 @@ func IsValid(args []string) bool {
 	// verify the number of element per row
 	lines := args[1:]
 	for _, el := range lines {
-		if len(el) > 9 {
+		if len(el) != 9 {
 			fmt.Printf("[ERROR] Too much number in call\nhave (%d)\nwant (9)", len(el))
 			return false
 		}
