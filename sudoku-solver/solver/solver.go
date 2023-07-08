@@ -1,6 +1,6 @@
 package solver
 
-import "sudoku/checker"
+import "sudoku/sudoku-solver/checker"
 
 // solve the given grid
 func Solver(x, y int, grid [][]int) bool {
