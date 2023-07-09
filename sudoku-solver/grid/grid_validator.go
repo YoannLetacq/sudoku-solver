@@ -116,7 +116,7 @@ func IsValid(args []string) bool {
 		fmt.Println("The Sudoku grid is valid.")
 		return true
 	} else {
-		fmt.Printf("The Sudoku grid is invalid. Duplicate found at position (%d, %d).\n", row, col)
+		fmt.Printf("The Sudoku grid is invalid. Duplicate found at position (row:%d, col: %d).\n", row, col)
 		return false
 	}
 }
