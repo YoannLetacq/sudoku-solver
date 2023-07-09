@@ -13,7 +13,7 @@ func main() {
 	// get args
 	args := os.Args[1:]
 
-	// create a new grid
+	// create a new grid if args are valid
 	if !grid.IsValid(args) {
 		return
 	}
