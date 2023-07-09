@@ -59,10 +59,6 @@ The solved grid is:
 ```
 
 In case of invalid inputs, the program will return errors:
-```bash 
-go run . 1 2 3 4 
-[ERROR] Missing argument in call have (4) want (9)
-```
 
 ```bash
  go run . "9.46.3..1" "37.1..2.6" "..6..93.4" "..13..9.5" "56..91..." "82...461." "..79...4." "425.167.." "1.2..75.8"
