@@ -1,5 +1,5 @@
 package solver
-
+// return the next case 
 func Next(x, y int, grid [][]int) (int, int, [][]int) {
 	// set the next coordinate
 	nextX := (x + 1) % 9
